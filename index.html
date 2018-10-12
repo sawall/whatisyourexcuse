@@ -9,6 +9,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">   
   <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Crete+Round" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
 
   <style>
 
@@ -55,8 +57,7 @@ body {
   padding: 0;
   background: #2d3a42;
   color: #bcd5d1;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  /*  font-family: 'Anton', georgia, serif; */
+  font-family: 'Crete Round', serif;
   font-size: 40px;
 }
 
@@ -72,7 +73,7 @@ body {
 .banner {
   padding: 2rem;
   font-size: 2.5rem;
-  font-family: 'Cinzel', serif;
+  font-family: 'Permanent Marker', cursive;
   text-align: center;
   background: #4b87b7;
   color: white;
@@ -115,7 +116,7 @@ body {
 }
 
 .quip {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Crete Round', serif;
   font-size: 20px;
   color: #222;
   padding: 10px 20px;
@@ -182,6 +183,17 @@ body {
   background: none;
   padding: 2rem 1rem 0;
 }
+.links_to_things .resources {
+    display: grid;
+    grid-template-columns: 1fr 1fr
+}
+.links_to_things .resources .resource {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  font-style: italic;
+}
 
 #what {
   color: #FFDE84;
@@ -191,10 +203,6 @@ body {
   height: 58px;
   margin: 30px auto 30px;
   background-repeat: no-repeat;
-}
-
-#what.wyebanner {
-  background: url("../banner.png");
 }
 
 #frames {
@@ -256,7 +264,6 @@ body {
   opacity: 0;
 }
 
-/* line 300, ../scss/lib/_mixins.scss */
 .csstransforms3d #frames .frame.past {
   -moz-transform: rotateY(-60deg) translateZ(350px) translate(-200px);
   -webkit-transform: rotateY(-60deg) translateZ(350px) translate(-200px);
@@ -266,12 +273,10 @@ body {
   opacity: 0;
 }
 
-/* line 305, ../scss/lib/_mixins.scss */
 .csstransforms3d #frames .frame.loading {
   visibility: hidden;
 }
 
-/* line 77, ../scss/style.scss */
 .footnote {
   margin: 16px 0;
   display: block;
@@ -280,6 +285,7 @@ body {
   max-width: 100%;
   white-space: nowrap;
   text-overflow: ellipsis;
+  color: #444;
 }
 
 #twAndFb {
@@ -351,11 +357,22 @@ body {
         <div id="frames"> </div>
       </div>
       <div class="links_to_things">
-        <div class="banner">Check out these fine links</div>
-        <p><a href="https://www.rockthevote.org/resources/am-i-registered-to-vote/">Rock the Vote - registration checker</a></p>
-        <p><a href="https://votesmart.org/share/widgets">Vote Smart - search candidates, elections</a></p>
-        <p><a href="https://www.headcount.org/promotional-toolkit/">Headcount - register to vote</a></p>
-        <p><a href="https://www.headcount.org/voter-info/">Headcount - voter info page</a></p>
+        <div class="banner">Check out these fine resources</div>
+        <div class="resources">
+          <div class="resource">
+            <a href="https://www.headcount.org/voter-info/">
+              <img src="/img/headcount_512.png" alt="voter info at headcount.org"
+                style="width:200px;"></img>
+              <p>voter info at headcount.org</p>
+            </a>
+          </div>
+          <div class="resource">
+            <a href="https://www.rockthevote.org/resources/election-reminders/">
+              <img src="/img/RTV.png" alt="election reminders" style="width:200px;"></img>
+              <p>election reminders</p>
+            </a>
+          </div>
+        </div>
       </div>
     </main>
   </div>
