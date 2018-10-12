@@ -1,66 +1,412 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en" >
+
 <head>
-    <!-- with love to What The Fuck Has Obama Done So Far?
-        http://whatthefuckhasobamadonesofar.com -->
 
-	<title>What is your excuse to not vote?</title>
-	
-	<meta property="og:title" content="What is your excuse to not vote?" id="ogTitle" />
-    <meta property="og:site_name" content="What is your Excuse?" />
-	<meta property="og:url" content="http://whatisyourexcuse/" id="ogUrl" />
-	
-	<meta property="og:type" content="politician" />
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" />
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" />
+  <title>CodePen - whats your excuse</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">   
 
-    <!-- FIX THIS
-	<meta property="og:image" content="http://whatthefuckhasobamadonesofar.com/obama.jpg"/>
-	<meta property="fb:admins" content="8402354,536529357,103599" />
-    -->
-    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
 	<link href='css/style.css' rel='stylesheet' type='text/css'>
-	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+  
+  
+  
+      <style>
+      p {
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+a:link {
+  color: #333;
+  text-decoration: none;
+}
+
+a:visited, a:active, a:hover {
+  color: #bcd5d1;
+  text-decoration: none;
+}
+
+.content {
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    flex-direction: row;
+    flex: 1;
+  }
+
+  .content {
+    flex: 1;
+  }
+}
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #2d3a42;
+  color: #bcd5d1;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /*  font-family: 'Anton', georgia, serif; */
+  font-size: 40px;
+}
+
+.meme img {
+  width: 50%;
+}
+@media screen and (max-width: 410px) {
+  .meme img {
+    width: 40%;
+  }
+}
+
+.banner {
+  padding: 2rem;
+  font-size: 2.5rem;
+  font-family: 'Cinzel', serif;
+  text-align: center;
+  background: #4b87b7;
+  color: white;
+}
+@media screen and (max-width: 416px) {
+  .banner {
+    padding: 1rem;
+    font-size: 1.5rem;
+  }
+}
+
+#top {
+  width: 100%;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+#wye {
+  padding: 4rem;
+  display: block;
+  text-align: center;
+  background: #dcd9d2;
+  height: 30rem;
+  overflow: hidden;
+}
+@media screen and (max-width: 416px) {
+  #wye {
+    padding: 1.5rem;
+    height: 26rem;
+  }
+}
+
+#frames .frame {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 700px;
+  margin-left: -350px;
+}
+
+.quip {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color: #222;
+  padding: 10px 20px;
+  background: white;
+  border-radius: 14px;
+  border: 1px solid #cbc6b9;
+}
+
+.quip:hover {
+  background: #4b87b7;
+  border: 1px solid #4b87b7;
+  color: #fff;
+}
+
+.quip:active {
+  background: #1e5a82;
+}
+
+.excuse {
+  display: block;
+  line-height: 48px;
+  font-size: 3rem;
+  font-style: italic;
+  font-weight: bold;
+  color: #444;
+  padding-bottom: 2rem;
+}
+@media screen and (max-width: 730px) {
+  .excuse {
+    font-size: 2rem;
+    line-height: 130%;
+    width: 400px;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 416px) {
+  .excuse {
+    font-size: 1.25rem;
+    width: 320px;
+  }
+}
+
+.links_to_things {
+  background: #933d3e;
+  padding: 0 0 5rem 0;
+}
+@media screen and (max-width: 416px) {
+  .links_to_things {
+    padding: 0 0 2rem 0;
+  }
+}
+.links_to_things a {
+  color: #ddd;
+}
+@media screen and (max-width: 416px) {
+  .links_to_things a {
+    font-size: 1rem;
+  }
+}
+.links_to_things a:hover {
+  color: cyan;
+}
+.links_to_things .banner {
+  background: none;
+  padding: 2rem 1rem 0;
+}
+
+#what {
+  color: #FFDE84;
+  text-shadow: 0 0 3px #2D58C4;
+  text-indent: -9999px;
+  width: 361px;
+  height: 58px;
+  margin: 30px auto 30px;
+  background-repeat: no-repeat;
+}
+
+#what.wyebanner {
+  background: url("../banner.png");
+}
+
+#frames {
+  position: relative;
+  width: 100%;
+}
+
+#frames .frame {
+  display: block;
+}
+
+#frames .frame.future, #frames .frame.past {
+  display: none;
+}
+
+.csstransforms3d #frames {
+  -webkit-perspective: 1200;
+  -moz-perspective: 1200px;
+}
+
+.csstransforms3d #frames .frame {
+  position: absolute;
+  margin-bottom: 2rem;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-transform-origin: 50% 0 0 50%;
+  -webkit-transform-origin: 50% 0 0 50%;
+  -o-transform-origin: 50% 0 0 50%;
+  -ms-transform-origin: 50% 0 0 50%;
+  transform-origin: 50% 0 0 50%;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -moz-transform: rotateY(0) translateZ(0);
+  -webkit-transform: rotateY(0) translateZ(0);
+  -o-transform: rotateY(0) translateZ(0);
+  -ms-transform: rotateY(0) translateZ(0);
+  transform: rotateY(0) translateZ(0);
+  opacity: 1;
+  display: block;
+  -webkit-transition: -webkit-transform .3s ease-in-out, opacity .3s ease-in-out;
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.5s ease-in-out;
+  -moz-transition: -moz-transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.5s ease-in-out;
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.5s ease-in-out;
+}
+
+/* line 295, ../scss/lib/_mixins.scss */
+.csstransforms3d #frames .frame.future {
+  -moz-transform: rotateY(60deg) translateZ(350px) translate(200px);
+  -webkit-transform: rotateY(60deg) translateZ(350px) translate(200px);
+  -o-transform: rotateY(60deg) translateZ(350px) translate(200px);
+  -ms-transform: rotateY(60deg) translateZ(350px) translate(200px);
+  transform: rotateY(60deg) translateZ(350px) translate(200px);
+  opacity: 0;
+}
+
+/* line 300, ../scss/lib/_mixins.scss */
+.csstransforms3d #frames .frame.past {
+  -moz-transform: rotateY(-60deg) translateZ(350px) translate(-200px);
+  -webkit-transform: rotateY(-60deg) translateZ(350px) translate(-200px);
+  -o-transform: rotateY(-60deg) translateZ(350px) translate(-200px);
+  -ms-transform: rotateY(-60deg) translateZ(350px) translate(-200px);
+  transform: rotateY(-60deg) translateZ(350px) translate(-200px);
+  opacity: 0;
+}
+
+/* line 305, ../scss/lib/_mixins.scss */
+.csstransforms3d #frames .frame.loading {
+  visibility: hidden;
+}
+
+/* line 77, ../scss/style.scss */
+.footnote {
+  margin: 16px 0;
+  display: block;
+  font-size: 14px;
+  font-style: italic;
+  max-width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#twAndFb {
+  text-align: left;
+}
+
+.footer {
+  display: block;
+  margin: 0;
+  background: #2d3a42;
+}
+
+#share {
+  color: lightgray;
+}
+
+/* line 37, ../scss/style.scss */
+#share {
+  padding: 2rem 2rem 4rem;
+}
+
+/* line 40, ../scss/style.scss */
+#share a:link {
+  color: lightblue;
+  text-decoration: none;
+  float: left;
+}
+@media screen and (max-width: 416px) {
+  #share a:link {
+    float: none;
+  }
+}
+#share a:link:hover {
+  color: white;
+}
+
+#links {
+  width: 100%;
+  display: block;
+}
+#links p a {
+  font-size: 1rem;
+  float: left;
+}
+#links #credits {
+  font-size: .875rem;
+  float: right;
+}
+@media screen and (max-width: 416px) {
+  #links #credits {
+    float: none;
+    text-align: center;
+    margin: 1rem auto;
+    line-height: 120%;
+    display: block;
+  }
+}
+
+    </style>
+
+  
+  
+  
+  
+
 </head>
-<body>
 
-<div id="top">
+<body translate="no" >
+
+  <body class="container">
+  <header>
     <div class="banner">What is your excuse to not vote?</div>
-</div>
-	
-<div id="wye">
-  	<div id="frames"> </div>
-</div>
+  </header>
+  <div class="wrapper">
+    <main class="content">
 
-<div id="share" class="clearfix">
-    <div class="wrap">
-        <div id="links">
-            <a href="mailto:whatisyourexcusetonotvote@gmail.com" title="Are we missing an excuse? Send us an email!">Hey! You forgot&hellip;</a>
-			<br />
-			<span id="credits">
-                credits: we are just some people, ya know?  
-			</span>
-		</div>
-	</div>
-</div>
+      <div id="wye">
+        <div id="frames"> </div>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="mustache.js"></script>
-<script src="modernizer.js"></script>
+        <script type="text/html" id="frame_template">
+          <div class="frame future">
+            <div class="excuse"><i>"{{excuse}}"</i></div>
+            <div class="meme"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/671247/{{meme}}"></div>
+            <div>
+              <a href="javascript:void(0);" class="quip">{{quip}}</a>
+            </div>
+          </div>
+        </script>
 
-<script type="text/html" id="frame_template">
-  <div class="frame future">
-    <div class="excuse"><i>"{{excuse}}"</i></div>
-    <div class="meme"><img src="img/{{meme}}" width="500px"></div>
-    <div class="footnote">{{{footnote}}}</a></div>
-    <div >
-  		<a href="javascript:void(0);" class="quip">{{quip}}</a>
-  	</div>
+      </div>
+      <div class="links_to_things">
+        <div class="banner">Check out these fine links</div>
+        <p><a href="https://www.rockthevote.org/resources/am-i-registered-to-vote/">Rock the Vote - registration checker</a></p>
+        <p><a href="https://votesmart.org/share/widgets">Vote Smart - search candidates, elections</a></p>
+        <p><a href="https://www.headcount.org/promotional-toolkit/">Headcount - register to vote</a></p>
+        <p><a href="https://www.headcount.org/voter-info/">Headcount - voter info page</a></p>
+      </div>
+    </main>
+    <!-- 
+    <aside class="HolyGrail-ads"><div class="side"></div></aside>
+-->
   </div>
-</script>
+  <div class="footer">
 
-<script type="text/javascript">
-  var excuse = [];
+    <div id="share">
+      <div id="links">
+        <p><a href="mailto:whatisyourexcusetonotvote@gmail.com" title="Are we missing an excuse? Send us an email!">Hey! You forgot&hellip;</a>
+        <span id="credits">
+                credits: we are just some people, ya know?  
+			  </span></p>
+      </div>
+    </div>
+  </div>
+</body>
+  
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/671247/mustache.js'></script>
+
+  
+
+    <script >
+        var excuse = [];
   excuse[1] = "Both parties are the same.";
   excuse[2] = "I refuse to condone a voting system that is forced on me.";
   excuse[3] = "I forgot to vote.";
@@ -89,11 +435,9 @@
   quips[3] = "Meh.";
   quips[4] = "Voting is hard.";
   quips[5] = "Yeah, AND?";
-  quips[6] = "Nice try, but that's not my reason.";
-</script>
+  quips[6] = "Nice try, but that's not my reason."; 
 
-<script type="text/javascript">
-  $(function(){
+$(function(){
     var cursor = 1 + Math.floor((excuse.length - 1)*Math.random());
     var $frames = $('#frames');
     var $current, $old;
@@ -127,23 +471,9 @@
 
   next_frame();
 });
-</script>
-
-<!--
-    TODO
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-93356-5']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
--->
+    </script>
 
 </body>
+
 </html>
+ 
