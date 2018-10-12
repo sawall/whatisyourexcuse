@@ -390,26 +390,29 @@ body {
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></script>
   <script>
     var excuse = [];
-    excuse[1] = "Both parties are the same.";
-    excuse[2] = "I refuse to condone a voting system that is forced on me.";
-    excuse[3] = "I forgot to vote.";
-    excuse[4] = "I have to work";
-    excuse[5] = "I'm too old for this shit.";
-
     var meme = [];
-    meme[1] = "meme1.jpg";
-    meme[2] = "meme2.jpg";
-    meme[3] = "meme3.jpg";
-    meme[4] = "meme4.jpg";
-    meme[5] = "meme5.jpg";
-
+    var alt = [];
     var footnotes = [];
-    footnotes[1] = "useful information and a link<br>blah blah<br>blah";
-    footnotes[2] = "useful information and a link<br>blah blah<br>blah";
-    footnotes[3] = "useful information and a link<br>blah blah<br>blah";
-    footnotes[4] = "useful information and a link<br>blah blah<br>blah";
-    footnotes[5] = "useful information and a link<br>blah blah<br>blah";
-    footnotes[6] = "useful information and a link<br>blah blah<br>blah";
+
+    meme[1] = "meme1.jpg";
+    alt[1] = "Pulp Fiction Jules is sick of your not voting excuses";
+    excuse[1] = "Both parties are the same";
+    footnotes[1] = "No. https://www.diffen.com/difference/Democrat_vs_Republican";
+
+    meme[2] = "meme2.jpg";
+    alt[2] = "Penguins in Antarctica are welcoming you to not vote";
+    excuse [2] = "I don't want to participate in a system that was forced on me."
+    footnotes [2] = "Man, being born in America sure is a burden. Maybe try somewhere with fewer civic responsibilities? https://www.ats.aq/e/ats.htm";
+
+    meme[3] = "meme3.jpg";
+    alt [3] =  "Big Lebowski Walter wants to remind you to vote";
+    excuse [3] = "I forgot";
+    footnotes [3] = "Sign up for election reminders! https://www.rockthevote.org/resources/election-reminders/";
+
+    meme[4] = "meme4.jpg";
+    alt [4] = "Office Space Boss wants you to vote";
+    excuse [4] = "I have to work";
+    footnotes [4] = "Your employer may be required to allow time off to vote / https://www.workplacefairness.org/voting-rights-time-off-work";
 
     var quips = [];
     quips[0] = "Yeah? I've got a better one...";
@@ -424,25 +427,24 @@ body {
     var frames = $('#frames');
     var current_meme, old_meme;
     
-    function build_meme(excuse, meme, footnote, quip) {
+    function build_meme(excuse, meme, alt, footnote, quip) {
+        alert(quip);
       return `<div class="frame future">
                 <div class="excuse"><i>"${excuse}"</i></div>
                 <div class="meme">
-                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/671247/${meme}">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/671247/${meme}" alt="${alt}">
                 </div>
                 <div class="footnote">${footnote}</div>
                 <div><a href="javascript:void(0);" class="quip">${quip}</a></div>
               </div>`;
     }
 
-    current_meme = $(build_meme(excuse[cursor], meme[cursor],
-        footnotes[cursor],quips[Math.floor(Math.random()*quips.length)])).appendTo(frames);
+    current_meme = $(build_meme(excuse[cursor], meme[cursor], alt[cursor], footnotes[cursor], quips[Math.floor(Math.random()*quips.length)])).appendTo(frames);
 
     function next_meme(){
       cursor = (cursor >= excuse.length -1) ? 1 : cursor + 1;
       old_meme = current_meme;
-      current_meme = $(build_meme(excuse[cursor], meme[cursor],
-          footnotes[cursor],quips[Math.floor(Math.random()*quips.length)])).appendTo(frames);
+      current_meme = $(build_meme(excuse[cursor], meme[cursor], alt[cursor], footnotes[cursor], quips[Math.floor(Math.random()*quips.length)])).appendTo(frames);
       old_meme.addClass('past');
       setTimeout(function(){
         current_meme.removeClass('future');				
