@@ -7,13 +7,10 @@
   <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" />
   <title>What's your excuse?</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">   
-  <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Crete+Round" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
 
   <style>
-
 p {
   font-size: 1.25rem;
   text-align: center;
@@ -62,7 +59,7 @@ body {
 }
 
 .meme img {
-  width: 50%;
+    max-height: 18rem;
 }
 @media screen and (max-width: 410px) {
   .meme img {
@@ -71,7 +68,6 @@ body {
 }
 
 .banner {
-  padding: 2rem;
   font-size: 2.5rem;
   font-family: 'Permanent Marker', cursive;
   text-align: center;
@@ -93,7 +89,7 @@ body {
 }
 
 #wye {
-  padding: 4rem;
+  padding: 2rem;
   display: block;
   text-align: center;
   background: #dcd9d2;
@@ -137,8 +133,8 @@ body {
 
 .excuse {
   display: block;
-  line-height: 48px;
-  font-size: 3rem;
+  line-height: 1rem;
+  font-size: 2rem;
   font-style: italic;
   font-weight: bold;
   color: #444;
@@ -302,12 +298,10 @@ body {
   color: lightgray;
 }
 
-/* line 37, ../scss/style.scss */
 #share {
   padding: 2rem 2rem 4rem;
 }
 
-/* line 40, ../scss/style.scss */
 #share a:link {
   color: lightblue;
   text-decoration: none;
@@ -349,32 +343,29 @@ body {
 
 <body translate="no" >
   <header>
-    <div class="banner">What is your excuse to not vote?</div>
+    <div class="banner">Voting Excuse Generator</div>
   </header>
   <div class="wrapper">
-    <main class="content">
-      <div id="wye">
-        <div id="frames"> </div>
-      </div>
-      <div class="links_to_things">
-        <div class="banner">Check out these fine resources</div>
-        <div class="resources">
-          <div class="resource">
-            <a href="https://www.headcount.org/voter-info/">
-              <img src="/img/headcount_512.png" alt="voter info at headcount.org"
-                style="width:200px;"></img>
-              <p>voter info at headcount.org</p>
-            </a>
-          </div>
-          <div class="resource">
-            <a href="https://www.rockthevote.org/resources/election-reminders/">
-              <img src="/img/RTV.png" alt="election reminders" style="width:200px;"></img>
-              <p>election reminders</p>
-            </a>
-          </div>
+    <div id="wye">
+      <div id="frames"> </div>
+    </div>
+    <div class="links_to_things">
+      <div class="resources">
+        <div class="resource">
+          <a href="https://www.headcount.org/voter-info/">
+            <img src="/img/headcount_512.png" alt="voter info at headcount.org"
+              style="width:200px;"></img>
+            <p>voter info at headcount.org</p>
+          </a>
+        </div>
+        <div class="resource">
+          <a href="https://www.rockthevote.org/resources/election-reminders/">
+            <img src="/img/RTV.png" alt="election reminders" style="width:200px;"></img>
+            <p>election reminders</p>
+          </a>
         </div>
       </div>
-    </main>
+    </div>
   </div>
   <div class="footer">
     <div id="share">
@@ -393,6 +384,12 @@ body {
     var meme = [];
     var alt = [];
     var footnotes = [];
+
+    // loading page
+    meme[0] = "eagle.jpg";
+    alt[0] = "What is your excuse not to vote?";
+    excuse[0] = ""; 
+    footnotes [0] = "";
 
     meme[1] = "meme1.jpg";
     alt[1] = "Pulp Fiction Jules is sick of your not voting excuses";
@@ -429,16 +426,22 @@ body {
     
     function build_meme(excuse, meme, alt, footnote, quip) {
       return `<div class="frame future">
-                <div class="excuse"><i>"${excuse}"</i></div>
+                ${ (excuse => {
+                  if(excuse) return `<div class="excuse"><i>"${excuse}"</i></div>`
+                  else return ``
+                 })(excuse) }
                 <div class="meme">
-                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/671247/${meme}" alt="${alt}">
+                  <img src="/img/${meme}" alt="${alt}">
                 </div>
                 <div class="footnote">${footnote}</div>
                 <div><a href="javascript:void(0);" class="quip">${quip}</a></div>
               </div>`;
     }
 
-    current_meme = $(build_meme(excuse[cursor], meme[cursor], alt[cursor], footnotes[cursor], quips[Math.floor(Math.random()*quips.length)])).appendTo(frames);
+    // first meme
+    current_meme = $(build_meme(excuse[0], meme[0], alt[0], footnotes[0],
+                                "I've got a great excuse!" )).appendTo(frames);
+    current_meme.removeClass('future');				
 
     function next_meme(){
       cursor = (cursor >= excuse.length -1) ? 1 : cursor + 1;
@@ -454,8 +457,6 @@ body {
     $('#frames').delegate('a.quip', 'click', function(){
       next_meme();
     });
-
-    next_meme();
   </script>
 </body>
 </html>
