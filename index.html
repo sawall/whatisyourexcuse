@@ -32,7 +32,7 @@ a:link {
   text-decoration: none;
 }
 
-a:visited, a:active, a:hover {
+a:active, a:hover {
   color: #bcd5d1;
   text-decoration: none;
 }
@@ -142,7 +142,6 @@ body {
   display: block;
   line-height: 1rem;
   font-size: 2rem;
-  font-weight: bold;
   color: #444;
   padding-bottom: 2rem;
 }
@@ -160,10 +159,9 @@ body {
     width: 320px;
   }
 }
-
 .links_to_things {
   background: #933d3e;
-  padding: 2rem 0;
+  padding: 2rem;
 }
 @media screen and (max-width: 416px) {
   .links_to_things {
@@ -172,27 +170,41 @@ body {
 }
 .links_to_things a {
   color: #ddd;
+  font-family: 'Crete Round', serif;
+  font-size: 20px;
+  color: #222;
+  padding: 10px 20px;
+  background: white;
+  border-radius: 14px;
+  border: 1px solid #cbc6b9;
 }
+
+.links_to_things a:hover {
+  background: #4b87b7;
+  border: 1px solid #4b87b7;
+  color: #fff;
+}
+
+.links_to_things a:active {
+  background: #1e5a82;
+}
+
 @media screen and (max-width: 416px) {
   .links_to_things a {
     font-size: 1rem;
   }
 }
-.links_to_things a:hover {
-  color: cyan;
-}
 .links_to_things .banner {
   background: none;
 }
 .links_to_things .resources {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 .links_to_things .resources .resource {
   display: flex;
-  min-height: 10rem;
   justify-content: center;
-  font-size: 0.5em;
+  font-size: 1em;
   font-style: italic;
   background-size: contain;
   background-repeat: no-repeat;
@@ -284,7 +296,7 @@ body {
 .footnote {
   margin: 16px 0;
   display: block;
-  font-size: 14px;
+  font-size: 1rem;
   font-style: italic;
   max-width: 100%;
   white-space: nowrap;
@@ -304,9 +316,6 @@ body {
 
 #share {
   color: lightgray;
-}
-
-#share {
   padding: 2rem 2rem 4rem;
 }
 
@@ -359,14 +368,19 @@ body {
     </div>
     <div class="links_to_things">
       <div class="resources">
-        <div class="resource" style="background-image: url('/img/headcount_logo.png')">
-          <a href="https://www.headcount.org/voter-info/">
-            <span>get all the voter info</span>
+        <div class="resource">
+          <a href="https://www.rockthevote.org/register-to-vote/">
+            <span>get registered</span>
           </a>
         </div>
-        <div class="resource" style="background-image: url('/img/rockthevote_logo.png')">
+        <div class="resource">
+          <a href="https://www.headcount.org/voter-info/">
+            <span>how to vote</span>
+          </a>
+        </div>
+        <div class="resource">
           <a href="https://www.rockthevote.org/resources/election-reminders/">
-            <span>register and get reminders</span>
+            <span>get reminders</span>
           </a>
         </div>
       </div>
@@ -389,32 +403,38 @@ body {
     var meme = [];
     var alt = [];
     var footnotes = [];
+    var info = [];
 
     // loading page
     meme[0] = "eagle.jpg";
     alt[0] = "What is your excuse not to vote?";
     excuse[0] = ""; 
-    footnotes [0] = "";
+    footnotes[0] = "";
+    info[0] = "";
 
     meme[1] = "meme1.jpg";
     alt[1] = "Pulp Fiction Jules is sick of your not voting excuses";
     excuse[1] = "Both parties are the same";
-    footnotes[1] = "No. https://www.diffen.com/difference/Democrat_vs_Republican";
+    footnotes[1] = "No.";
+    info[1] = "https://www.diffen.com/difference/Democrat_vs_Republican";
 
     meme[2] = "meme2.jpg";
     alt[2] = "Penguins in Antarctica are welcoming you to not vote";
-    excuse [2] = "I don't want to participate in a system that was forced on me."
-    footnotes [2] = "Man, being born in America sure is a burden. Maybe try somewhere with fewer civic responsibilities? https://www.ats.aq/e/ats.htm";
+    excuse[2] = "I don't want to participate in a system that was forced on me."
+    footnotes[2] = "Man, being born in America sure is a burden. Maybe try somewhere with fewer civic responsibilities?";
+    info[2] = "https://www.ats.aq/e/ats.htm";
 
     meme[3] = "meme3.jpg";
-    alt [3] =  "Big Lebowski Walter wants to remind you to vote";
-    excuse [3] = "I forgot";
-    footnotes [3] = "Sign up for election reminders! https://www.rockthevote.org/resources/election-reminders/";
+    alt[3] =  "Big Lebowski Walter wants to remind you to vote";
+    excuse[3] = "I forgot";
+    footnotes[3] = "Sign up for election reminders!";
+    info[3] = "https://www.rockthevote.org/resources/election-reminders/";
 
     meme[4] = "meme4.jpg";
-    alt [4] = "Office Space Boss wants you to vote";
-    excuse [4] = "I have to work";
-    footnotes [4] = "Your employer may be required to allow time off to vote / https://www.workplacefairness.org/voting-rights-time-off-work";
+    alt[4] = "Office Space Boss wants you to vote";
+    excuse[4] = "I have to work";
+    footnotes[4] = "Your employer may be required to allow time off to vote";
+    info[4] = "https://www.workplacefairness.org/voting-rights-time-off-work";
 
     var quips = [];
     quips[0] = "Yeah? I've got a better one...";
@@ -429,7 +449,7 @@ body {
     var frames = $('#frames');
     var current_meme, old_meme;
     
-    function build_meme(excuse, meme, alt, footnote, quip) {
+    function build_meme(excuse, meme, alt, footnote, info, quip) {
       return `<div class="frame future">
                 ${ (excuse => {
                   if(excuse) return `<div class="excuse">"${excuse}"</div>`
@@ -439,19 +459,26 @@ body {
                   <img src="/img/${meme}" alt="${alt}">
                 </div>
                 <div class="footnote">${footnote}</div>
-                <div><a href="javascript:void(0);" class="quip">${quip}</a></div>
+                <div>
+                ${ (info => {
+                  if(info) return `<a href="${info}" class="quip">Tell me more!</a>`
+                  else return ``
+                 })(info) }
+                  <a href="javascript:void(0);" class="quip">${quip}</a>
+                </div>
               </div>`;
     }
 
     // first meme
     current_meme = $(build_meme(excuse[0], meme[0], alt[0], footnotes[0],
-                                "I've got a great excuse!" )).appendTo(frames);
+                                "", "I've got a great excuse!")).appendTo(frames);
     current_meme.removeClass('future');				
 
     function next_meme(){
       cursor = (cursor >= excuse.length -1) ? 1 : cursor + 1;
       old_meme = current_meme;
-      current_meme = $(build_meme(excuse[cursor], meme[cursor], alt[cursor], footnotes[cursor], quips[Math.floor(Math.random()*quips.length)])).appendTo(frames);
+      current_meme = $(build_meme(excuse[cursor], meme[cursor], alt[cursor], footnotes[cursor],
+                       info[cursor], quips[Math.floor(Math.random()*quips.length)])).appendTo(frames);
       old_meme.addClass('past');
       setTimeout(function(){
         current_meme.removeClass('future');				
