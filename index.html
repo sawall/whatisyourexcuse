@@ -442,8 +442,14 @@ body {
     }
 
     // first meme
-    current_meme = $(build_meme(excuse[0], meme[0], alt[0], footnotes[0],
-                                "", "I've got a great excuse!")).appendTo(frames);
+    var memeNum = parseInt(window.location.hash.substr(1), 10);
+    if (memeNum) {
+        current_meme = $(build_meme(excuse[memeNum], meme[memeNum], alt[memeNum],
+            footnotes[memeNum], info[memeNum], quips[0])).appendTo(frames);
+    } else {
+        current_meme = $(build_meme(excuse[0], meme[0], alt[0], footnotes[0],
+            "", "I've got a great excuse!")).appendTo(frames);
+    }
     current_meme.removeClass('future');				
 
     function next_meme(){
@@ -464,4 +470,3 @@ body {
   </script>
 </body>
 </html>
- 
