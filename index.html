@@ -189,7 +189,7 @@ body {
 }
 .links_to_things .resources {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 .links_to_things .resources .resource {
   display: flex;
@@ -201,7 +201,7 @@ body {
 #frames {
   position: relative;
   width: 100%;
-      flex-flow: column;
+  flex-flow: column;
 }
 
 #frames .frame {
@@ -274,7 +274,7 @@ body {
 .footnote {
   margin: 16px 0;
   display: block;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-style: italic;
   max-width: 100%;
   white-space: nowrap;
@@ -346,7 +346,6 @@ body {
     </div>
     <div class="links_to_things">
       <div class="resources">
-        <div class="resource"></div>
         <div class="resource">
           <a href="https://www.rockthevote.org/register-to-vote/">
             get registered
@@ -362,7 +361,6 @@ body {
             get reminders
           </a>
         </div>
-        <div class="resource"></div>
       </div>
     </div>
   </div>
@@ -417,13 +415,7 @@ body {
     info[4] = "https://www.workplacefairness.org/voting-rights-time-off-work";
 
     var quips = [];
-    quips[0] = "Yeah? I've got a better one...";
-    quips[1] = "Whatever, I still have an excuse.";
-    quips[2] = "I'm unimpressed.";
-    quips[3] = "Meh.";
-    quips[4] = "Voting is hard.";
-    quips[5] = "Yeah, AND?";
-    quips[6] = "Nice try, but that's not my reason."; 
+    quips[0] = "Yeah, AND?";
 
     var cursor = 1 + Math.floor((excuse.length - 1)*Math.random());
     var frames = $('#frames');
