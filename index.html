@@ -11,6 +11,16 @@
   <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Sriracha" rel="stylesheet">
 
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127474610-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-127474610-1');
+  </script>
+
   <style>
 @font-face {
   font-family: 'Impact Label';
@@ -96,12 +106,12 @@ body {
 }
 
 #wye {
-  padding: 2rem;
+  padding: 1.5rem;
   display: block;
   text-align: center;
   background: #dcd9d2;
-  height: 30rem;
-  overflow: hidden;
+  min-height: 30rem;
+  flex: 1;
 }
 @media screen and (max-width: 416px) {
   #wye {
@@ -114,16 +124,16 @@ body {
   position: absolute;
   top: 0;
   left: 50%;
-  width: 700px;
-  margin-left: -350px;
+  width: 720px;
+  margin-left: -360px;
+  overflow: auto;
 }
 
 .excuse {
   display: block;
-  line-height: 1rem;
   font-size: 2rem;
   color: #444;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 @media screen and (max-width: 730px) {
   .excuse {
@@ -191,6 +201,7 @@ body {
 #frames {
   position: relative;
   width: 100%;
+      flex-flow: column;
 }
 
 #frames .frame {
@@ -430,7 +441,7 @@ body {
                 <div class="footnote">${footnote}</div>
                 <div>
                 ${ (info => {
-                  if(info) return `<a href="${info}" class="quip">Tell me more!</a>`
+                  if(info) return `<a href="${info}" class="quip" target="_blank">Tell me more!</a>`
                   else return ``
                  })(info) }
                   <a href="javascript:void(0);" class="quip">${quip}</a>
