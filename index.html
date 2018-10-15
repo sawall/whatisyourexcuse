@@ -118,26 +118,6 @@ body {
   margin-left: -350px;
 }
 
-.quip {
-  font-family: 'Crete Round', serif;
-  font-size: 20px;
-  color: #222;
-  padding: 10px 20px;
-  background: white;
-  border-radius: 14px;
-  border: 1px solid #cbc6b9;
-}
-
-.quip:hover {
-  background: #4b87b7;
-  border: 1px solid #4b87b7;
-  color: #fff;
-}
-
-.quip:active {
-  background: #1e5a82;
-}
-
 .excuse {
   display: block;
   line-height: 1rem;
@@ -168,24 +148,24 @@ body {
     padding: 0 0 2rem 0;
   }
 }
-.links_to_things a {
+.links_to_things a, .quip {
   color: #ddd;
   font-family: 'Crete Round', serif;
   font-size: 20px;
   color: #222;
-  padding: 10px 20px;
+  padding: 10px 4rem;
   background: white;
   border-radius: 14px;
   border: 1px solid #cbc6b9;
 }
 
-.links_to_things a:hover {
+.links_to_things a:hover, .quip:hover {
   background: #4b87b7;
   border: 1px solid #4b87b7;
   color: #fff;
 }
 
-.links_to_things a:active {
+.links_to_things a:active, .quip:active {
   background: #1e5a82;
 }
 
@@ -199,26 +179,13 @@ body {
 }
 .links_to_things .resources {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 .links_to_things .resources .resource {
   display: flex;
   justify-content: center;
   font-size: 1em;
   font-style: italic;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-#what {
-  color: #FFDE84;
-  text-shadow: 0 0 3px #2D58C4;
-  text-indent: -9999px;
-  width: 361px;
-  height: 58px;
-  margin: 30px auto 30px;
-  background-repeat: no-repeat;
 }
 
 #frames {
@@ -368,21 +335,23 @@ body {
     </div>
     <div class="links_to_things">
       <div class="resources">
+        <div class="resource"></div>
         <div class="resource">
           <a href="https://www.rockthevote.org/register-to-vote/">
-            <span>get registered</span>
+            get registered
           </a>
         </div>
         <div class="resource">
           <a href="https://www.headcount.org/voter-info/">
-            <span>how to vote</span>
+            how to vote
           </a>
         </div>
         <div class="resource">
           <a href="https://www.rockthevote.org/resources/election-reminders/">
-            <span>get reminders</span>
+            get reminders
           </a>
         </div>
+        <div class="resource"></div>
       </div>
     </div>
   </div>
