@@ -23,21 +23,7 @@ a:active, a:hover {
   text-decoration: none;
 }
 
-.content {
-  height: 100%;
-}
-
-@media (min-width: 768px) {
-  .wrapper {
-    flex-direction: row;
-    flex: 1;
-  }
-
-  .content {
-    flex: 1;
-  }
-}
-html {
+html, body {
   height: 100%;
 }
 
@@ -48,18 +34,17 @@ body {
   color: #bcd5d1;
   font-family: 'Crete Round', serif;
   font-size: 40px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
-.meme img {
-    max-height: 20rem;
-}
-@media screen and (max-width: 410px) {
-  .meme img {
-    width: 40%;
-  }
+header {
+  order: 0;
 }
 
-.banner {
+header .banner {
   padding: 0.5rem;
   font-size: 2.5rem;
   font-family: 'Impact Label', cursive;
@@ -68,40 +53,32 @@ body {
   color: white;
 }
 @media screen and (max-width: 416px) {
-  .banner {
+  header .banner {
     padding: 1rem;
     font-size: 1.5rem;
   }
 }
 
-#top {
-  width: 100%;
-  text-align: center;
-  padding-top: 10px;
-  padding-bottom: 20px;
-}
-
-#wye {
+#frames {
+  display: flex;
+  flex: 1;
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center
   padding: 1.5rem;
-  display: block;
   text-align: center;
   background: #dcd9d2;
   min-height: 30rem;
-  flex: 1;
 }
 @media screen and (max-width: 416px) {
-  #wye {
+  #frames {
     padding: 1.5rem;
     height: 26rem;
   }
 }
 
 #frames .frame {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 720px;
-  margin-left: -360px;
   overflow: auto;
 }
 
@@ -125,6 +102,15 @@ body {
     width: 320px;
   }
 }
+.meme img {
+    max-height: 20rem;
+}
+@media screen and (max-width: 410px) {
+  .meme img {
+    width: 40%;
+  }
+}
+
 .links_to_things {
   background: #933d3e;
   padding: 2rem;
@@ -172,12 +158,6 @@ body {
   justify-content: center;
   font-size: 1em;
   font-style: italic;
-}
-
-#frames {
-  position: relative;
-  width: 100%;
-  flex-flow: column;
 }
 
 #frames .frame {
