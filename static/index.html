@@ -89,7 +89,7 @@
               </div>`;
     }
 
-    // first meme
+    // check to see if there is an anchored meme
     var memeNum = parseInt(window.location.hash.substr(1), 10);
     if (memeNum) {
         current_meme = $(build_meme(excuse[memeNum], meme[memeNum], alt[memeNum],
@@ -108,6 +108,7 @@
       old_meme.addClass('past');
       setTimeout(function(){
         current_meme.removeClass('future');				
+        window.location.hash = cursor;
         setTimeout(function(){ old_meme.remove(); }, 600);
       }, 200);
     }
