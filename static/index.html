@@ -90,8 +90,8 @@
     }
 
     // check to see if there is an anchored meme
-    var memeNum = parseInt(window.location.hash.substr(1), 10);
-    if (memeNum) {
+    var memeNum = hashes.indexOf(window.location.hash.substr(1));
+    if (memeNum > -1) {
         current_meme = $(build_meme(excuse[memeNum], meme[memeNum], alt[memeNum],
             footnotes[memeNum], info[memeNum])).appendTo(frames);
     } else {
@@ -108,7 +108,7 @@
       old_meme.addClass('past');
       setTimeout(function(){
         current_meme.removeClass('future');				
-        window.location.hash = cursor;
+        window.location.hash = hashes[cursor];
         setTimeout(function(){ old_meme.remove(); }, 600);
       }, 200);
     }
