@@ -134,6 +134,16 @@ header .banner {
   order: 3;
 }
 
+.item.social {
+  order: 4;
+  margin: 1.5rem 0;
+}
+
+.item.social img {
+  margin: 0.5rem;
+  height: 4rem;
+}
+
 .links_to_things {
   order: 2;
   background: #933d3e;
