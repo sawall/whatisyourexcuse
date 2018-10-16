@@ -85,7 +85,7 @@
     function build_meme(excuse, meme, alt, footnote, info) {
       return `<div class="frame future">
                 ${ (excuse => {
-                  if(excuse) return `<div class="item" id="excuse">"${excuse}"</div>`
+                  if(excuse) return `<div class="item excuse">"${excuse}"</div>`
                   else return ``
                  })(excuse) }
                 <div class="item meme">

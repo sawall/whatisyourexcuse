@@ -62,8 +62,8 @@ header .banner {
 .frames {
   order: 1;
   justify-content: center;
-  align-items: center
-  padding: 1.5rem;
+  align-items: center;
+  padding: 2rem 0;
   text-align: center;
   background: #dcd9d2;
   flex-grow: 1; 
@@ -90,9 +90,9 @@ header .banner {
   flex: 1;
 }
 
-.item#excuse {
+.item.excuse {
   font-size: 2rem;
-  color: #444;
+  color: #933d3e;
   padding-bottom: 1rem;
 }
 @media screen and (max-width: 730px) {
@@ -113,7 +113,7 @@ header .banner {
   order: 1;
 }
 .item.meme img {
-  max-height: 20rem;
+  height: auto;
 }
 @media screen and (max-width: 410px) {
   .item.meme img {
@@ -127,7 +127,7 @@ header .banner {
   font-style: italic;
   max-width: 100%;
   text-overflow: ellipsis;
-  color: #444;
+  color: #4b87b7;
 }
 
 .item.buttons {
@@ -152,12 +152,13 @@ header .banner {
   padding: 10px 4rem;
   background: white;
   border-radius: 14px;
-  border: 1px solid #cbc6b9;
+  border: 5px solid #4b87b7;
 }
 
 .links_to_things a:hover, .quip:hover {
   background: #4b87b7;
-  border: 1px solid #4b87b7;
+  border: 5px solid #4b87b7;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   color: #fff;
 }
 
@@ -189,12 +190,12 @@ header .banner {
   display: block;
   margin: 0;
   background: #2d3a42;
-  height: 3rem;
+  height: 4rem;
 }
 
 .share {
   color: lightgray;
-  padding: 2rem 2rem 4rem;
+  padding: 0 1rem;
 }
 
 .share a:link {
