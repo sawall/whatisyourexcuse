@@ -38,5 +38,3 @@ footnotes.push("{}");
 info.push("{}");'''.format(*m))
     
     outfile.close()
-
-
