@@ -59,33 +59,34 @@ header .banner {
   }
 }
 
-#frames {
+.frames {
   order: 1;
   justify-content: center;
   align-items: center
   padding: 1.5rem;
   text-align: center;
   background: #dcd9d2;
-  min-height: 40rem;
+  flex-grow: 1; 
 }
 @media screen and (max-width: 416px) {
-  #frames {
+  .frames {
     padding: 1.5rem;
     height: 26rem;
   }
 }
 
-#frames .frame {
-  display: flex;
+.frames .frame {
+  display: inline-flex;
   flex-direction: column;
   flex: 1
 }
 
-#frames .frame.future, #frames .frame.past {
+.frames .frame.future, .frames .frame.past {
   display: none;
 }
 
 .item {
+  width: 600px;
   flex: 1;
 }
 
@@ -108,29 +109,28 @@ header .banner {
     width: 320px;
   }
 }
-.item#meme {
+.item.meme {
   order: 1;
 }
-.item#meme img {
+.item.meme img {
   max-height: 20rem;
 }
 @media screen and (max-width: 410px) {
-  .item#meme img {
+  .item.meme img {
     width: 40%;
   }
 }
-.item#footnote {
+.item.footnote {
   order: 2;
   margin: 16px 0;
   font-size: 1.5rem;
   font-style: italic;
   max-width: 100%;
-  white-space: nowrap;
   text-overflow: ellipsis;
   color: #444;
 }
 
-.item#buttons {
+.item.buttons {
   order: 3;
 }
 
@@ -189,41 +189,42 @@ header .banner {
   display: block;
   margin: 0;
   background: #2d3a42;
+  height: 3rem;
 }
 
-#share {
+.share {
   color: lightgray;
   padding: 2rem 2rem 4rem;
 }
 
-#share a:link {
+.share a:link {
   color: lightblue;
   text-decoration: none;
   float: left;
 }
 @media screen and (max-width: 416px) {
-  #share a:link {
+  .share a:link {
     float: none;
   }
 }
-#share a:link:hover {
+.share a:link:hover {
   color: white;
 }
 
-#links {
+.links {
   width: 100%;
   display: block;
 }
-#links p a {
+.links p a {
   font-size: 1rem;
   float: left;
 }
-#links #credits {
+.links .credits {
   font-size: .875rem;
   float: right;
 }
 @media screen and (max-width: 416px) {
-  #links #credits {
+  .links.credits {
     float: none;
     text-align: center;
     margin: 1rem auto;

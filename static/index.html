@@ -44,7 +44,7 @@
   <header>
     <div class="banner">VOTING EXCUSE GENERATOR</div>
   </header>
-  <div id="frames"> </div>
+  <div class="frames"> </div>
   <div class="links_to_things">
     <div class="resources">
       <div class="resource">
@@ -65,10 +65,10 @@
     </div>
   </div>
   <div class="footer">
-    <div id="share">
-      <div id="links">
+    <div class="share">
+      <div class="links">
         <p><a href="mailto:whatisyourexcuse.vote@gmail.com" title="Are we missing an excuse? Send us an email!">Submit an excuse</a>
-        <span id="credits">
+        <span class="credits">
           credits: we are just some people, ya know?  
         </span></p>
       </div>
@@ -79,7 +79,7 @@
   <script src='/memes.js'></script>
   <script>
     var cursor = 1 + Math.floor((excuse.length - 1)*Math.random());
-    var frames = $('#frames');
+    var frames = $('.frames');
     var current_meme, old_meme;
     
     function build_meme(excuse, meme, alt, footnote, info) {
@@ -88,16 +88,16 @@
                   if(excuse) return `<div class="item" id="excuse">"${excuse}"</div>`
                   else return ``
                  })(excuse) }
-                <div class="item" id="meme">
+                <div class="item meme">
                   <img src="/img/${meme}" alt="${alt}">
                 </div>
-                <div class="item" id="footnote">${footnote}</div>
-                <div class="item" id="buttons">
+                <div class="item footnote">${footnote}</div>
+                <div class="item buttons">
                 ${ (info => {
                   if(info) return `<a href="${info}" class="quip" target="_blank">Tell me more!</a>`
                   else return ``
                  })(info) }
-                  <a href="javascript:void(0);" class="quip">Yeah, AND?</a>
+                  <a href="javascript:void(0);" class="quip yeahand">Yeah, AND?</a>
                 </div>
               </div>`;
     }
@@ -126,7 +126,7 @@
       }, 200);
     }
   
-    $('#frames').delegate('a.quip', 'click', function(){
+    $('.frames').delegate('a.yeahand', 'click', function(){
       next_meme();
     });
   </script>
