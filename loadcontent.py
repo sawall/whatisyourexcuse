@@ -12,5 +12,9 @@ with open('content.csv', newline='') as csvfile:
                 'excuse': row[2], 'answer': row[3], 'source': row[4]})
 
 with open('memes.json', 'w') as outfile:
-    json.dump(out[1:], outfile) # dump all but the header row
+    s = json.dumps(out[1:]) # dump all but the header row
+    s = s.replace("'", "\\'")
+    outfile.write(s)
+    outfile.close()
+
 
