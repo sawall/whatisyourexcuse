@@ -85,14 +85,14 @@
     function build_meme(excuse, meme, alt, footnote, info) {
       return `<div class="frame future">
                 ${ (excuse => {
-                  if(excuse) return `<div class="excuse">"${excuse}"</div>`
+                  if(excuse) return `<div class="item" id="excuse">"${excuse}"</div>`
                   else return ``
                  })(excuse) }
-                <div class="meme">
+                <div class="item" id="meme">
                   <img src="/img/${meme}" alt="${alt}">
                 </div>
-                <div class="footnote">${footnote}</div>
-                <div>
+                <div class="item" id="footnote">${footnote}</div>
+                <div class="item" id="buttons">
                 ${ (info => {
                   if(info) return `<a href="${info}" class="quip" target="_blank">Tell me more!</a>`
                   else return ``
