@@ -82,11 +82,11 @@
     var frames = $('.frames');
     var current_meme, old_meme;
     
-    function build_meme(excuse, meme, alt, footnote, info) {
+    function build_meme(excuse, meme, alt, footnote, info, quip) {
       return `<div class="frame future">
                 ${ (excuse => {
                   if(excuse) return `<div class="item excuse">"${excuse}"</div>`
-                  else return ``
+                  else return `<div class="item excuse"></div>`
                  })(excuse) }
                 <div class="item meme">
                   <img src="/img/${meme}" alt="${alt}">
@@ -96,8 +96,13 @@
                 ${ (info => {
                   if(info) return `<a href="${info}" class="quip" target="_blank">Tell me more!</a>`
                   else return ``
-                 })(info) }
-                  <a href="javascript:void(0);" class="quip yeahand">Yeah, AND?</a>
+                })(info) }
+                  <a href="javascript:void(0);" class="quip yeahand">
+                  ${ (quip => {
+                    if(quip) return `${quip}`
+                    else return `Yeah, AND?` 
+                  })(quip)}
+                  </a>
                 </div>
                 <div class="item social">
                   <img src="/img/share_facebook_black.svg">
@@ -108,10 +113,10 @@
     }
 
     // check to see if there is an anchored meme
-    var memeNum = hashes.indexOf(window.location.hash.substr(1));
-    if (memeNum > -1) {
-        current_meme = $(build_meme(excuse[memeNum], meme[memeNum], alt[memeNum],
-            footnotes[memeNum], info[memeNum])).appendTo(frames);
+    var memeHash = hashes.indexOf(window.location.hash.substr(1));
+    if (memeHash != 0) {
+        current_meme = $(build_meme(excuse[memeHash], meme[memeHash], alt[memeHash],
+            footnotes[memeHash], info[memeHash])).appendTo(frames);
     } else {
         current_meme = $(build_meme(excuse[0], meme[0], alt[0], footnotes[0],
             "", "I've got a great excuse!")).appendTo(frames);
