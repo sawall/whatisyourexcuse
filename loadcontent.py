@@ -28,9 +28,9 @@ meme.push("eagle.jpg");
 alt.push("What is your excuse not to vote?");
 excuse.push("");
 footnotes.push("");
+info.push("");
 
-// load everything else
-info.push("");''')
+// load everything else''')
     for m in memes[1:]:  # skip header
         outfile.write('''
 hashes.push("{}");

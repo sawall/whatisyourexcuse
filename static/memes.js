@@ -12,9 +12,9 @@ meme.push("eagle.jpg");
 alt.push("What is your excuse not to vote?");
 excuse.push("");
 footnotes.push("");
+info.push("");
 
 // load everything else
-info.push("");
 hashes.push("faKiqUtQk5I");
 meme.push("meme14.jpg");
 alt.push("Skeptical child questions your voting excuses");
