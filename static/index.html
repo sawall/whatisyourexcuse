@@ -64,16 +64,12 @@
   
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></script>
   <script src='/memes.js'></script>
-  <script src='/memeframes.js'></script>
   <script>
-    var quips = [];
-    quips[0] = "Yeah, AND?";
-
     var cursor = 1 + Math.floor((excuse.length - 1)*Math.random());
     var frames = $('#frames');
     var current_meme, old_meme;
     
-    function build_meme(excuse, meme, alt, footnote, info, quip) {
+    function build_meme(excuse, meme, alt, footnote, info) {
       return `<div class="frame future">
                 ${ (excuse => {
                   if(excuse) return `<div class="excuse">"${excuse}"</div>`
@@ -88,7 +84,7 @@
                   if(info) return `<a href="${info}" class="quip" target="_blank">Tell me more!</a>`
                   else return ``
                  })(info) }
-                  <a href="javascript:void(0);" class="quip">${quip}</a>
+                  <a href="javascript:void(0);" class="quip">Yeah, AND?</a>
                 </div>
               </div>`;
     }
@@ -97,7 +93,7 @@
     var memeNum = parseInt(window.location.hash.substr(1), 10);
     if (memeNum) {
         current_meme = $(build_meme(excuse[memeNum], meme[memeNum], alt[memeNum],
-            footnotes[memeNum], info[memeNum], quips[0])).appendTo(frames);
+            footnotes[memeNum], info[memeNum])).appendTo(frames);
     } else {
         current_meme = $(build_meme(excuse[0], meme[0], alt[0], footnotes[0],
             "", "I've got a great excuse!")).appendTo(frames);
@@ -108,7 +104,7 @@
       cursor = (cursor >= excuse.length -1) ? 1 : cursor + 1;
       old_meme = current_meme;
       current_meme = $(build_meme(excuse[cursor], meme[cursor], alt[cursor], footnotes[cursor],
-                       info[cursor], quips[Math.floor(Math.random()*quips.length)])).appendTo(frames);
+                       info[cursor])).appendTo(frames);
       old_meme.addClass('past');
       setTimeout(function(){
         current_meme.removeClass('future');				
