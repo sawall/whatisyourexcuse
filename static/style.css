@@ -60,6 +60,7 @@ header .banner {
 .frames .frame {
   display: inline-flex;
   flex-direction: column;
+  justify-self: center;
 }
 
 .frames .frame.future, .frames .frame.past {
@@ -67,14 +68,13 @@ header .banner {
 }
 
 .item {
-  width: 400px;
   flex: 1;
 }
 
 .item.excuse {
   color: #933d3e;
   font-size: 2vw;
-  padding: 2vw 0 0.75vw;
+  padding: 1.25vw 0 0.5vw;
 }
 
 .item.meme {
@@ -90,7 +90,7 @@ header .banner {
   order: 2;
   color: #933d3e;
   font-size: 1.75vw;
-  padding: 0.5vw 0 1.5vw;
+  padding: 0.5vw 0 1.25vw;
   font-style: italic;
   text-overflow: ellipsis;
 }
@@ -98,6 +98,29 @@ header .banner {
 .item.buttons {
   order: 3;
   margin: 1.5vw 0;
+}
+
+.item.buttons .quip {
+  color: #ddd;
+  font-family: 'Crete Round', serif;
+  font-size: 1.5vw;
+  color: #222;
+  padding: 1vw 4vw;
+  background: white;
+  border-radius: 2vw;
+  border: 0.5vw solid #4b87b7;
+  margin: 0 1vw;
+}
+
+.item.buttons .quip:hover {
+  background: #4b87b7;
+  border: 0.5vw solid #4b87b7;
+  box-shadow: 0 0.4vw 0.8vw 0 rgba(0, 0, 0, 0.2), 0 0.6vw 2vw 0 rgba(0, 0, 0, 0.19);
+  color: #fff;
+}
+
+.item.buttons .quip:active {
+  background: #1e5a82;
 }
 
 .item.social {
@@ -137,43 +160,26 @@ header .banner {
 .links_to_things a:active {
   background: #1e5a82;
 }
-.quip {
-  color: #ddd;
-  font-family: 'Crete Round', serif;
-  font-size: 1.5vw;
-  color: #222;
-  padding: 1vw 1.5vw;
-  background: white;
-  border-radius: 2vw;
-  border: 0.5vw solid #4b87b7;
-  margin: 0 1vw;
-}
-
-.quip:hover {
-  background: #4b87b7;
-  border: 0.5vw solid #4b87b7;
-  box-shadow: 0 0.4vw 0.8vw 0 rgba(0, 0, 0, 0.2), 0 0.6vw 2vw 0 rgba(0, 0, 0, 0.19);
-  color: #fff;
-}
-
-.quip:active {
-  background: #1e5a82;
-}
 
 .links_to_things .banner {
   background: none;
 }
 .links_to_things .resources {
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
 }
 .links_to_things .resources .resource {
   display: flex;
-  margin: 0.5vw 0;
-  justify-content: center;
+  margin: 0.5vw;
   font-size: 1em;
   font-style: italic;
+}
+.links_to_things .resources .resource.left {
+  justify-self: end;
+}
+.links_to_things .resources .resource.right {
+  justify-self: start;
 }
 
 .footer {
