@@ -7,10 +7,10 @@ import json
 
 memes = []
 with open('content.csv', newline='') as csvfile:
-    spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
+    spamreader = csv.reader(csvfile, delimiter=',', quotechar='"')
     for row in spamreader:
         # all elements are filled in and ready is marked
-        if all(v for v in row[:6]) and (row[6] == 'yes' or row[6] == 'y'):  
+        if len(row) > 7 and all(v for v in row[:7]) and (row[6] == 'yes' or row[6] == 'y'):
             memes.append((row[0], row[1] + '.jpg', row[2], row[3], row[4], row[5]))
 
 with open('static/memes.js', 'w') as outfile:
@@ -31,7 +31,7 @@ footnotes.push("");
 info.push("");
 
 // load everything else''')
-    for m in memes[1:]:  # skip header
+    for m in memes:
         outfile.write('''
 hashes.push("{}");
 meme.push("{}");
