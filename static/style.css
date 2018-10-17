@@ -126,9 +126,12 @@ header .banner {
   color: #222;
   padding: 1vw 4vw;
   background: white;
-  border-radius: 2vw;
+  border-radius: 3vw;
   border: 0.5vw solid #4b87b7;
   margin: 0 1vw;
+  display: inline-block;
+  width: 7rem;
+  text-align: center;
 }
 
 .item.buttons .quip:hover {
@@ -158,28 +161,6 @@ header .banner {
   padding: 2vw;
 }
 
-.links_to_things a {
-  color: #ddd;
-  font-family: 'Crete Round', serif;
-  font-size: 0.75rem;
-  color: #222;
-  padding: 0.5vw 4vw;
-  background: white;
-  border-radius: 2vw;
-  border: 0.2vw solid #483A3A;
-}
-
-.links_to_things a:hover {
-  background: #4b87b7;
-  border: 2px solid #4b87b7;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  color: #fff;
-}
-
-.links_to_things a:active {
-  background: #1e5a82;
-}
-
 .links_to_things .banner {
   background: none;
 }
@@ -188,11 +169,16 @@ header .banner {
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
 }
+@media screen and (max-width: 400px) {
+  .links_to_things .resources {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+}
 .links_to_things .resources .resource {
   display: flex;
   margin: 0.5vw;
   font-size: 1em;
-  font-style: italic;
 }
 .links_to_things .resources .resource.left {
   justify-self: end;
@@ -200,6 +186,37 @@ header .banner {
 .links_to_things .resources .resource.right {
   justify-self: start;
 }
+@media screen and (max-width: 400px) {
+  .links_to_things .resources .resource.left, .links_to_things .resources .resource.right {
+    justify-self: center;
+  }
+}
+
+.res_btn {
+  color: #ddd;
+  font-family: 'Crete Round', serif;
+  font-size: 0.75rem;
+  color: #222;
+  padding: 0.5vw 4vw;
+  background: white;
+  border-radius: 2vw;
+  border: 0.2vw solid #483A3A;
+  display: inline-block;
+  width: 6rem;
+  text-align: center;
+}
+
+.res_btn:hover {
+  background: #4b87b7;
+  border: 2px solid #4b87b7;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color: #fff;
+}
+
+.res_btn:active {
+  background: #1e5a82;
+}
+
 
 .footer {
   order: 3;

@@ -54,23 +54,23 @@
   <div class="links_to_things">
     <div class="resources">
       <div class="resource left">
-        <a href="https://www.rockthevote.org/register-to-vote/" target="_blank">
-          get registered
+        <a class="res_btn" href="https://www.rockthevote.org/register-to-vote/" target="_blank">
+          Get Registered
         </a>
       </div>
       <div class="resource right">
-        <a href="https://www.headcount.org/voter-info/" target="_blank">
-          how to vote
+        <a class="res_btn" href="https://www.headcount.org/voter-info/" target="_blank">
+          How To Vote
         </a>
       </div>
       <div class="resource left">
-        <a href="https://www.rockthevote.org/resources/election-reminders/" target="_blank">
-          never miss a vote
+        <a class="res_btn" href="https://www.rockthevote.org/resources/election-reminders/" target="_blank">
+          Never Miss a Vote
         </a>
       </div>
       <div class="resource right">
-        <a href="https://ballotpedia.org/Ballotpedia%27s_Sample_Ballot_Lookup_Tool" target="_blank">
-          find my ballot
+        <a class="res_btn" href="https://ballotpedia.org/Ballotpedia%27s_Sample_Ballot_Lookup_Tool" target="_blank">
+          Find My Ballot
         </a>
       </div>
     </div>
@@ -105,7 +105,7 @@
                 <div class="item footnote">${footnote}</div>
                 <div class="item buttons">
                 ${ (info => {
-                  if(info) return `<a href="${info}" class="quip" target="_blank">Tell me more!</a>`
+                  if(info) return `<a href="${info}" class="quip" target="_blank">Tell Me More!</a>`
                   else return ``
                 })(info) }
                   <a href="javascript:void(0);" class="quip yeahand">
