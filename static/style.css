@@ -132,6 +132,12 @@ header .banner {
   border: 0.5vw solid #4b87b7;
   width: 7.5rem;
 }
+@media screen and (min-width: 1200px) {
+  .item.buttons .quip {
+    width: 150px;
+    border: 6px solid #4b87b7;
+  }
+}
 
 .item.buttons .quip:hover {
   background: #4b87b7;
