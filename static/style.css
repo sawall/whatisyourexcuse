@@ -124,13 +124,13 @@ header .banner {
   font-family: 'Crete Round', serif;
   font-size: 0.75rem;
   color: #222;
-  padding: 1vw 4vw;
+  padding: 1vw;
   background: white;
   border-radius: 3vw;
   border: 0.5vw solid #4b87b7;
   margin: 0 1vw;
   display: inline-block;
-  width: 7rem;
+  width: 8rem;
   text-align: center;
 }
 
