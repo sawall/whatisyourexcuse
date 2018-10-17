@@ -78,6 +78,12 @@ header .banner {
   width: 24rem;
   flex: 1;
 }
+@media screen and (max-width: 400px) {
+  .item {
+    width: 100%;
+    height: auto;
+  }
+}
 
 .item.excuse {
   color: #933d3e;
@@ -95,7 +101,7 @@ header .banner {
 }
 @media screen and (max-width: 400px) {
   .item.meme img {
-    max-width: 100%;
+    width: 100%;
   }
 }
 
