@@ -229,8 +229,7 @@ hashes.push("XNZTzafy0dI");
 meme.push("meme6.jpg");
 alt.push("Because Math your vote counts");
 excuse.push("One vote doesn't matter");
-footnotes.push("Your vote + those you help vote & so on = democracy in action! 
-Start your own registration drive!");
+footnotes.push("Your vote + those you help vote & so on = democracy in action! <br/>Start your own registration drive!");
 info.push("https://www.dosomething.org/us/campaigns/online-registration-drive/action");
 hashes.push("C8reqS6t0p4");
 meme.push("meme7.jpg");
