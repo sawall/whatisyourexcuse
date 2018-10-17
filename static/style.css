@@ -60,7 +60,6 @@ header .banner {
 .frames .frame {
   display: inline-flex;
   flex-direction: column;
-  flex: 1
 }
 
 .frames .frame.future, .frames .frame.past {
@@ -93,7 +92,6 @@ header .banner {
   font-size: 1.75vw;
   padding: 0.5vw 0 1.5vw;
   font-style: italic;
-  max-width: 100%;
   text-overflow: ellipsis;
 }
 
@@ -144,7 +142,7 @@ header .banner {
   font-family: 'Crete Round', serif;
   font-size: 1.5vw;
   color: #222;
-  padding: 1vw 3vw;
+  padding: 1vw 1.5vw;
   background: white;
   border-radius: 2vw;
   border: 0.5vw solid #4b87b7;
