@@ -56,12 +56,6 @@ header .banner {
   background: linear-gradient(to right, rgba(180,178,175,1) 0%,rgba(220,217,210,1) 25%,rgba(220,217,210,1) 75%,rgba(180,178,175,1) 100%); 
   flex-grow: 1; 
 }
-@media screen and (max-width: 416px) {
-  .frames {
-    padding: 1.5vw;
-    height: 26vw;
-  }
-}
 
 .frames .frame {
   display: inline-flex;
@@ -123,11 +117,6 @@ header .banner {
   background: #933d3e;
   padding: 1vw;
 }
-@media screen and (max-width: 416px) {
-  .links_to_things {
-    padding: 0 0 2vw 0;
-  }
-}
 
 .links_to_things a {
   color: #ddd;
@@ -136,8 +125,8 @@ header .banner {
   color: #222;
   padding: 0.5vw 4vw;
   background: white;
-  border-radius: 14px;
-  border: 2px solid #483A3A;
+  border-radius: 2vw;
+  border: 0.2vw solid #483A3A;
 }
 
 .links_to_things a:hover {
@@ -155,28 +144,24 @@ header .banner {
   font-family: 'Crete Round', serif;
   font-size: 1.5vw;
   color: #222;
-  padding: 10px 3vw;
+  padding: 1vw 3vw;
   background: white;
-  border-radius: 14px;
-  border: 5px solid #4b87b7;
+  border-radius: 2vw;
+  border: 0.5vw solid #4b87b7;
   margin: 0 1vw;
 }
 
 .quip:hover {
   background: #4b87b7;
-  border: 5px solid #4b87b7;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: 0.5vw solid #4b87b7;
+  box-shadow: 0 0.4vw 0.8vw 0 rgba(0, 0, 0, 0.2), 0 0.6vw 2vw 0 rgba(0, 0, 0, 0.19);
   color: #fff;
 }
 
 .quip:active {
   background: #1e5a82;
 }
-@media screen and (max-width: 416px) {
-  .links_to_things a {
-    font-size: 1vw;
-  }
-}
+
 .links_to_things .banner {
   background: none;
 }
@@ -211,11 +196,6 @@ header .banner {
   text-decoration: none;
   float: left;
 }
-@media screen and (max-width: 416px) {
-  .share a:link {
-    float: none;
-  }
-}
 .share a:link:hover {
   color: white;
 }
@@ -231,13 +211,4 @@ header .banner {
 .links .credits {
   font-size: .875vw;
   float: right;
-}
-@media screen and (max-width: 416px) {
-  .links.credits {
-    float: none;
-    text-align: center;
-    margin: 1vw auto;
-    line-height: 120%;
-    display: block;
-  }
 }
