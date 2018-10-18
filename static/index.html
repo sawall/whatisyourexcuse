@@ -143,7 +143,9 @@
                   <a href="javascript:void(0);" class="sharePinterest">
                     <img src="/img/share_pinterest_black.svg">
                   </a>
-                  <img src="/img/share_email_black.svg">
+                  <a href="javascript:void(0);" class="shareEmail">
+                    <img src="/img/share_email_black.svg">
+                  </a>
                 </div>`;
     }
 
@@ -173,6 +175,10 @@
                 "url=" + meme_url + "&media=" + meme_imgloc + "&description=" + desc, "pop",
                 "width=600, height=400, scrollbars=no");
             // TODO: add hashtags
+            return false;
+        });
+        $('.shareEmail').click(function (f) {
+            var mailpopup = window.open("mailto:?subject=" + desc + "&body=" + meme_url);
             return false;
         });
     }
