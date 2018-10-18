@@ -140,13 +140,17 @@
                   <a href="javascript:void(0);" class="shareTwitter">
                     <img src="/img/share_twitter_black.svg">
                   </a>
-                  <img src="/img/share_pinterest_black.svg">
+                  <a href="javascript:void(0);" class="sharePinterest">
+                    <img src="/img/share_pinterest_black.svg">
+                  </a>
                   <img src="/img/share_email_black.svg">
                 </div>`;
     }
 
     function setup_social(cursor) {
-        let url = encodeURIComponent("http://whatisyourexcuse.vote/#" + hashes[cursor]); 
+        let site_url = window.location.protocol + '//' + window.location.hostname;
+        let meme_url = encodeURIComponent("http://whatisyourexcuse.vote/#" + hashes[cursor]); 
+        let meme_imgloc = site_url + '/img/' + meme[cursor];
         let desc = encodeURIComponent("Voting Excuse Generator");
         if (excuse[cursor] != "") {
             desc = desc + " - " + excuse[cursor];
@@ -154,15 +158,23 @@
 
         $('.shareFacebook').click(function (f) {
             var fbpopup = window.open("https://www.facebook.com/sharer/sharer.php?" +
-                "u=" + url, "pop", "width=600, height=400, scrollbars=no");
+                "u=" + meme_url, "pop", "width=600, height=400, scrollbars=no");
             return false;
 	    });
 
         $('.shareTwitter').click(function (f) {
             var twipopup = window.open("https://twitter.com/intent/tweet?text=" + desc +
-                "&url=" + url + "test", "pop", "width=600, height=400, scrollbars=no");
+                "&url=" + meme_url + "test", "pop", "width=600, height=400, scrollbars=no");
+            // TODO: add twitter user
             return false;
 	    });
+        $('.sharePinterest').click(function (f) {
+            var pinpopup = window.open("https://www.pinterest.com/pin/create/button/?" +
+                "url=" + meme_url + "&media=" + meme_imgloc + "&description=" + desc, "pop",
+                "width=600, height=400, scrollbars=no");
+            // TODO: add hashtags
+            return false;
+        });
     }
 
     function next_meme() {
