@@ -217,6 +217,10 @@
       $('.frames').delegate('a.yeahand', 'click', function(){
         next_meme();
       });
+      
+      $(window).on('popstate', function() {
+        location.reload(true);
+      });
     });
   </script>
 </body>
