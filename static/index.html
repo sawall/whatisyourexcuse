@@ -151,34 +151,35 @@
 
     function setup_social(cursor) {
         let site_url = window.location.protocol + '//' + window.location.hostname;
-        let meme_url = encodeURIComponent("http://whatisyourexcuse.vote/#" + hashes[cursor]); 
+        let meme_url = encodeURIComponent(site_url + "#" + hashes[cursor]); 
         let meme_imgloc = site_url + '/img/' + meme[cursor];
         let desc = encodeURIComponent("Voting Excuse Generator");
+        alert(meme_imgloc);
         if (excuse[cursor] != "") {
             desc = desc + " - " + excuse[cursor];
         } 
 
         $('.shareFacebook').click(function (f) {
-            var fbpopup = window.open("https://www.facebook.com/sharer/sharer.php?" +
+            window.open("https://www.facebook.com/sharer/sharer.php?" +
                 "u=" + meme_url, "pop", "width=600, height=400, scrollbars=no");
             return false;
 	    });
 
         $('.shareTwitter').click(function (f) {
-            var twipopup = window.open("https://twitter.com/intent/tweet?text=" + desc +
+            window.open("https://twitter.com/intent/tweet?text=" + desc +
                 "&url=" + meme_url + "test", "pop", "width=600, height=400, scrollbars=no");
             // TODO: add twitter user
             return false;
 	    });
         $('.sharePinterest').click(function (f) {
-            var pinpopup = window.open("https://www.pinterest.com/pin/create/button/?" +
+            window.open("https://www.pinterest.com/pin/create/button/?" +
                 "url=" + meme_url + "&media=" + meme_imgloc + "&description=" + desc, "pop",
                 "width=600, height=400, scrollbars=no");
             // TODO: add hashtags
             return false;
         });
         $('.shareEmail').click(function (f) {
-            var mailpopup = window.open("mailto:?subject=" + desc + "&body=" + meme_url);
+            window.open("mailto:?subject=" + desc + "&body=" + meme_url);
             return false;
         });
     }
