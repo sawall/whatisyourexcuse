@@ -154,7 +154,6 @@
         let meme_url = encodeURIComponent(site_url + "#" + hashes[cursor]); 
         let meme_imgloc = site_url + '/img/' + meme[cursor];
         let desc = encodeURIComponent("Voting Excuse Generator");
-        alert(meme_imgloc);
         if (excuse[cursor] != "") {
             desc = desc + " - " + excuse[cursor];
         } 
@@ -179,7 +178,8 @@
             return false;
         });
         $('.shareEmail').click(function (f) {
-            window.open("mailto:?subject=" + desc + "&body=" + meme_url);
+            window.open("mailto:?subject=" + desc + "&body=" + meme_url, "pop",
+                "width=600, height=400, scrollbars=no");
             return false;
         });
     }
