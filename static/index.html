@@ -184,25 +184,30 @@
         });
     }
 
-    function next_meme() {
-      cursor = (cursor >= excuse.length -1) ? 1 : cursor + 1;
+    function load_meme(memeHash) {
       let old_meme = current_meme;
-      let memeHash = hashes[cursor];
-      current_meme = $(build_meme(excuse[cursor], meme[cursor], alt[cursor], footnotes[cursor],
-                       info[cursor], memeHash)).appendTo(frames);
-      setup_social(cursor);
+      let memeIdx = hashes.indexOf(memeHash); 
+      current_meme = $(build_meme(excuse[memeIdx], meme[memeIdx], alt[memeIdx],
+                       footnotes[memeIdx], info[memeIdx], memeHash)).appendTo(frames);
+      setup_social(memeIdx);
       old_meme.addClass('past');
       setTimeout(function(){
         current_meme.removeClass('future');				
-        window.location.hash = hashes[cursor];
+        window.location.hash = memeHash;
         setTimeout(function(){ old_meme.remove(); }, 600);
       }, 200);
+    }
+
+    function next_meme() {
+      cursor = (cursor >= excuse.length -1) ? 1 : cursor + 1;
+      let memeHash = hashes[cursor];
+      load_meme(memeHash);
     }
   
     $(document).ready(function(){
       // check to see if there is a meme
-      var memeHash = window.location.hash.substr(1);
-      var memeIdx = hashes.indexOf(memeHash);
+      let memeHash = window.location.hash.substr(1);
+      let memeIdx = hashes.indexOf(memeHash);
       if (memeIdx != 0) {
         current_meme = $(build_meme(excuse[memeIdx], meme[memeIdx], alt[memeIdx],
                          footnotes[memeIdx], info[memeIdx], memeHash)).appendTo(frames);
@@ -219,7 +224,9 @@
       });
       
       $(window).on('popstate', function() {
-        location.reload(true);
+        if (window.location.hash != '#' + hashes[cursor]) {
+          load_meme(window.location.hash.substring(1));
+        }
       });
     });
   </script>
