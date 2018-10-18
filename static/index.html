@@ -135,19 +135,32 @@
                 </div>
                 <div class="item social">
                   <a href="javascript:void(0);" class="shareFacebook">
-                     <img src="/img/share_facebook_black.svg">
+                    <img src="/img/share_facebook_black.svg">
                   </a>
-                  <img src="/img/share_twitter_black.svg">
+                  <a href="javascript:void(0);" class="shareTwitter">
+                    <img src="/img/share_twitter_black.svg">
+                  </a>
                   <img src="/img/share_pinterest_black.svg">
                   <img src="/img/share_email_black.svg">
                 </div>`;
     }
 
     function setup_social(cursor) {
-        let url = "http://whatisyourexcuse.vote/%23" + hashes[cursor]; 
+        let url = encodeURIComponent("http://whatisyourexcuse.vote/#" + hashes[cursor]); 
+        let desc = encodeURIComponent("Voting Excuse Generator");
+        if (excuse[cursor] != "") {
+            desc = desc + " - " + excuse[cursor];
+        } 
+
         $('.shareFacebook').click(function (f) {
-            var fbpopup = window.open("https://www.facebook.com/sharer/sharer.php?u=" +
-                url, "pop", "width=600, height=400, scrollbars=no");
+            var fbpopup = window.open("https://www.facebook.com/sharer/sharer.php?" +
+                "u=" + url, "pop", "width=600, height=400, scrollbars=no");
+            return false;
+	    });
+
+        $('.shareTwitter').click(function (f) {
+            var twipopup = window.open("https://twitter.com/intent/tweet?text=" + desc +
+                "&url=" + url + "test", "pop", "width=600, height=400, scrollbars=no");
             return false;
 	    });
     }
