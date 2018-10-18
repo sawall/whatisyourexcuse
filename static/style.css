@@ -133,7 +133,7 @@ header .banner {
 }
 @media screen and (min-width: 800px) {
   .item.buttons .quip {
-    width: 250px;
+    width: 150px;
     border: 6px solid #4b87b7;
   }
 }
