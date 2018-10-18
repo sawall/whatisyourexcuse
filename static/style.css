@@ -131,9 +131,9 @@ header .banner {
   border-radius: 3vw;
   border: 0.5vw solid #4b87b7;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 800px) {
   .item.buttons .quip {
-    width: 150px;
+    width: 250px;
     border: 6px solid #4b87b7;
   }
 }
@@ -182,7 +182,7 @@ header .banner {
 .links_to_things .resources .resource {
   display: flex;
   margin: 0.5vw;
-  padding: 1vw 0 0.5vw;
+  padding: 0.5vw 0 0.5vw;
   font-size: 1em;
 }
 .links_to_things .resources .resource.left {
@@ -202,12 +202,12 @@ header .banner {
   font-family: 'Crete Round', serif;
   font-size: 0.75rem;
   color: #222;
-  padding: 0.5vw 4vw;
+  padding: 1vw 1vw;
   background: white;
   border-radius: 2vw;
   border: 0.2vw solid #483A3A;
   display: inline-block;
-  width: 6rem;
+  width: 8rem;
   text-align: center;
 }
 
