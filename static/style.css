@@ -116,7 +116,7 @@ header .banner {
 
 .item.buttons {
   order: 3;
-  margin: 1.5vw 0;
+  margin: 0.5vw 0;
 }
 
 .item.buttons .quip {
@@ -128,9 +128,9 @@ header .banner {
   font-size: 0.75rem;
   padding: 1vw;
   margin: 0 1vw;
+  width: 7.5 rem;
   border-radius: 3vw;
   border: 0.5vw solid #4b87b7;
-  width: 7.5rem;
 }
 @media screen and (min-width: 1200px) {
   .item.buttons .quip {
@@ -183,6 +183,7 @@ header .banner {
 .links_to_things .resources .resource {
   display: flex;
   margin: 0.5vw;
+  padding: 1.0vw 0;
   font-size: 1em;
 }
 .links_to_things .resources .resource.left {
