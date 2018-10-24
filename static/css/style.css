@@ -139,6 +139,11 @@ header .banner {
   box-shadow: 0 0.4vw 0.8vw 0 rgba(0, 0, 0, 0.2), 0 0.6vw 2vw 0 rgba(0, 0, 0, 0.19);
   color: #fff;
 }
+@media screen and (min-width: 800px) {
+  .item.buttons .quip:hover {
+      border: 6px solid #4b87b7;
+  }
+}
 
 .item.buttons .quip:active {
   background: #1e5a82;
