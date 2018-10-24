@@ -11,7 +11,8 @@ the site pages.
 
 The initial rev of the site was built using anchor tags and dynamic loading, but
 unfortunately Facebook and Twitter don't play nicely with anchors. Not wanting to abuse
-query strings led us to the current multi-page solution.
+query strings led us to the current multi-page solution. However, further research shows
+that the HTML5 History API may be a more appropriate solution so stay tuned.
 
 See the example CSV file, `content.csv` to understand the expected format. It's a vanilla
 csv download from Google Sheets. `generate_site.py` is used to generate the pages, using
