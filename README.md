@@ -9,12 +9,13 @@ The Voting Excuse Generator is built using static site generation with a `jinja2
 in `python`. It requires a CSV file to reference data and images in order to build out all of
 the site pages.
 
-The initial static rev of the site was built using anchor tags and dynamic loading, but
+The initial rev of the site was built using anchor tags and dynamic loading, but
 unfortunately Facebook and Twitter don't play nicely with anchors. Not wanting to abuse
-query strings led us to the current multipage solution.
+query strings led us to the current multi-page solution.
 
 See the example CSV file, `content.csv` to understand the expected format. It's a vanilla
-csv download from Google Sheets.
+csv download from Google Sheets. `generate_site.py` is used to generate the pages, using
+the template at `templates/base.html`.
 
 ## Build process
 
@@ -24,9 +25,9 @@ csv download from Google Sheets.
 
 # Credits:
 
-Audrey Maker: vision, product owner & memes
-Anonymous Designer: user experience & design
-Scott Boone: code & project management
-Mercedes Vaughn: writer & copy editor
-Delia Davila: copy editor & morale
+* Audrey Maker: vision, product owner & memes
+* Anonymous Designer: user experience & design
+* Scott Boone: code & project management
+* Mercedes Vaughn: writer & copy editor
+* Delia Davila: copy editor & morale
 
