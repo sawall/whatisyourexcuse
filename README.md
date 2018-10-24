@@ -13,7 +13,8 @@ The initial static rev of the site was built using anchor tags and dynamic loadi
 unfortunately Facebook and Twitter don't play nicely with anchors. Not wanting to abuse
 query strings led us to the current multipage solution.
 
-See the example CSV file, `content.csv` to understand the expected format.
+See the example CSV file, `content.csv` to understand the expected format. It's a vanilla
+csv download from Google Sheets.
 
 ## Build process
 
@@ -25,7 +26,7 @@ See the example CSV file, `content.csv` to understand the expected format.
 
 Audrey Maker: vision, product owner & memes
 Anonymous Designer: user experience & design
-Scott Boone: code & design 
+Scott Boone: code & project management
 Mercedes Vaughn: writer & copy editor
 Delia Davila: copy editor & morale
 
