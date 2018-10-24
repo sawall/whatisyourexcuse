@@ -26,9 +26,9 @@ the template at `templates/base.html`.
 
 # Credits:
 
-* Audrey Maker: vision, product owner & memes
-* Anonymous Designer: user experience & design
-* Scott Boone: code & project management
-* Mercedes Vaughn: writer & copy editor
-* Delia Davila: copy editor & morale
+* Audrey Maker: vision, product owner, and memes
+* Anonymous Designer: user experience and design
+* Scott Boone: code, project management, and design
+* Mercedes Vaughn: writer and copy editor
+* Delia Davila: copy editor and morale
 
