@@ -3,22 +3,29 @@
 What is your excuse not to vote? We've got answers and information for everything you can
 think of!
 
-# Technical
+## Technical
 
-The live site is entirely client-side. It's built in python by converting csv into html
-via a jinja2 template.
+The Voting Excuse Generator is built using static site generation with a `jinja2` template
+in `python`. It requires a CSV file to reference data and images in order to build out all of
+the site pages.
+
+The initial static rev of the site was built using anchor tags and dynamic loading, but
+unfortunately Facebook and Twitter don't play nicely with anchors. Not wanting to abuse
+query strings led us to the current multipage solution.
+
+See the example CSV file, `content.csv` to understand the expected format.
 
 ## Build process
 
 1. Download CSV into `content.csv`.
-2. Run generate_site.py
+2. Run `generate_site.py`
 3. Push the `www` directory online 
 
 # Credits:
 
-Audrey Maker: vision, guidance, meme creation
-Anonymous Designer: awesome UX
-Scott Boone: code, copy edits
-Mercedes Vaughn: writing, memes, and copy edits
-Delia Davila: memes, copy edits, and emotional support
+Audrey Maker: vision, product owner & memes
+Anonymous Designer: user experience & design
+Scott Boone: code & design 
+Mercedes Vaughn: writer & copy editor
+Delia Davila: copy editor & morale
 
