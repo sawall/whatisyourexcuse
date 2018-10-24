@@ -59,7 +59,7 @@
   </header>
   <div class="frames">
   <div class="frame">
-    <div class="item excuse">{{ meme['excuse']|safe }}</div>
+    <div class="item excuse">"{{ meme['excuse']|safe }}"</div>
     <div class="item meme" ontouchstart="touchmeme()" ontouchend="offmeme()">
       <img src="/img/{{ meme['image'] }}" alt="{{ meme['alt']|safe }}">
     </div>
