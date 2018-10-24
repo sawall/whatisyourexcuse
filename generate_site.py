@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 
-import csv
-import json
+# clear out www/ and copy static/ to it
+import shutil
 
+shutil.rmtree('www/')
+shutil.copytree('static/', 'www/')
+
+# init memes list with the landing page
 memes = []
-
-# landing page
 memes.append({
     'meme_id': 'index',
     'image': 'eagle.jpg',
@@ -16,6 +18,8 @@ memes.append({
     'quip': "I've got a great excuse!"
 })
 
+# read csv and build out meme info
+import csv
 with open('content.csv', newline='') as csvfile:
     spamreader = csv.reader(csvfile, delimiter=',', quotechar='"')
     for row in spamreader:
@@ -32,6 +36,7 @@ with open('content.csv', newline='') as csvfile:
                 'quip': 'Yeah, AND?'
             })
 
+# render into html pages using jinja
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 env = Environment(
     loader=FileSystemLoader('templates'),
@@ -40,15 +45,8 @@ env = Environment(
 
 template = env.get_template('base.html')
 
-# build the site in www
-import shutil
-
-shutil.rmtree('www/')
-shutil.copytree('static/', 'www/')
-
 for i, meme in enumerate(memes):
     meme['next_meme'] = memes[(i+1) % len(memes)]['meme_id']
     meme['prev_meme'] = memes[(i-1) % len(memes)]['meme_id']
     template.stream(meme=meme).dump('www/' + meme['meme_id'] + '.html')
-
 
