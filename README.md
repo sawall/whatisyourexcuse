@@ -18,6 +18,9 @@ See the example CSV file, `content.csv` to understand the expected format. It's 
 csv download from Google Sheets. `generate_site.py` is used to generate the pages, using
 the template at `templates/base.html`.
 
+As an added bonus, the `hashgen.py` script here was used to generate random web-friendly
+names for all of the images.
+
 ## Build process
 
 1. Download CSV into `content.csv`.
