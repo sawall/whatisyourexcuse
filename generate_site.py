@@ -40,8 +40,15 @@ env = Environment(
 
 template = env.get_template('base.html')
 
+# build the site in www
+import shutil
+
+shutil.rmtree('www/')
+shutil.copytree('static/', 'www/')
+
 for i, meme in enumerate(memes):
     meme['next_meme'] = memes[(i+1) % len(memes)]['meme_id']
     meme['prev_meme'] = memes[(i-1) % len(memes)]['meme_id']
-    template.stream(meme=meme).dump('static/' + meme['meme_id'] + '.html')
+    template.stream(meme=meme).dump('www/' + meme['meme_id'] + '.html')
+
 
