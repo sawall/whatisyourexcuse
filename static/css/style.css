@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'Impact Label';
-  src: url('img/Impact_Label_Reversed.ttf');
+  src: url('/img/Impact_Label_Reversed.ttf');
 }
 
-html {
+html, body {
   font-size: 16px;
   font-family: 'Crete Round', serif;
 }
@@ -67,10 +67,6 @@ header .banner {
   display: inline-flex;
   flex-direction: column;
   justify-self: center;
-}
-
-.frames .frame.future, .frames .frame.past {
-  display: none;
 }
 
 .item {
@@ -253,6 +249,8 @@ header .banner {
   float: left;
 }
 .links .credits {
+  width: 40%;
+  text-align: right;
   font-size: .66rem;
   float: right;
 }
