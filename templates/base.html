@@ -11,7 +11,11 @@
   <!-- open graph -->
   <meta property="og:url"         content="http://whatisyourexcuse.vote/{{ meme['meme_id'] }}.html"/>
   <meta property="og:type"        content="website" />
+  {% if meme['excuse'] != '' -%}
   <meta property="og:title"       content="Voting Excuse Generator - {{ meme['excuse']|safe }}"/>
+  {% else %}
+  <meta property="og:title"       content="Voting Excuse Generator"/>
+  {%- endif %}
   <meta property="og:description" content="{{ meme['answer'] }}" />
   <meta property="og:image"       content="http://whatisyourexcuse.vote/img/{{ meme['image'] }}"/>
 
@@ -59,7 +63,11 @@
   </header>
   <div class="frames">
   <div class="frame">
+    {% if meme['excuse'] != '' -%}
     <div class="item excuse">"{{ meme['excuse']|safe }}"</div>
+    {% else %}
+    <div class="item excuse"></div>
+    {% endif %}
     <div class="item meme" ontouchstart="touchmeme()" ontouchend="offmeme()">
       <img src="/img/{{ meme['image'] }}" alt="{{ meme['alt']|safe }}">
     </div>
