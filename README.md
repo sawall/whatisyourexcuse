@@ -39,4 +39,5 @@ names for all of the images.
 * Scott Boone: code, project management, and design
 * Mercedes Vaughn: writer and copy editor
 * Delia Davila: copy editor and morale
+* Monk: hexcolor resample process engineer
 
