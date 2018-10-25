@@ -15,7 +15,8 @@ memes.append({
     'excuse': '',
     'answer': '',
     'link': '',
-    'quip': "I've got a great excuse!"
+    'quip': "I've got a great excuse!",
+    'og_image': 'eagle.jpg'
 })
 
 # read csv and build out meme info
