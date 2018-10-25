@@ -9,6 +9,11 @@ The Voting Excuse Generator is built using static site generation with a `jinja2
 in `python`. It requires a CSV file to reference data and images in order to build out all of
 the site pages.
 
+Meme images should be placed in /static/memes. Open Graph letterboxed versions of the
+images should be generated in the same directory; e.g., use this command in `zsh`:
+
+> for file in ./**/*(.); convert $file:t -resize 1200x630 -gravity center -background "rgb(255,255,255)" -extent 1200x630 $file:t:r_og.$file:e
+
 The initial rev of the site was built using anchor tags and dynamic loading, but
 unfortunately Facebook and Twitter don't play nicely with anchors. Not wanting to abuse
 query strings led us to the current multi-page solution. However, further research shows

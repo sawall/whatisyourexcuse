@@ -20,12 +20,15 @@ memes.append({
 
 # read csv and build out meme info
 import csv
+from pathlib import Path
 with open('content.csv', newline='') as csvfile:
     spamreader = csv.reader(csvfile, delimiter=',', quotechar='"')
     for row in spamreader:
         r = [x.replace('\n', '<br/>') for x in row]
         # all elements are filled in and ready is marked
         if len(r) > 7 and all(v for v in r[:7]) and (r[6] == 'yes' or r[6] == 'y'):
+            p = Path(r[1])
+            og_image = p.stem + '_og' + p.suffix
             memes.append({
                 'meme_id': r[0],
                 'image': r[1],
@@ -33,7 +36,8 @@ with open('content.csv', newline='') as csvfile:
                 'excuse': r[3],
                 'answer': r[4],
                 'info': r[5], 
-                'quip': 'Yeah, AND?'
+                'quip': 'Yeah, AND?',
+                'og_image': og_image
             })
 
 # render into html pages using jinja

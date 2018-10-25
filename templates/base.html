@@ -17,7 +17,7 @@
   <meta property="og:title"       content="Voting Excuse Generator"/>
   {%- endif %}
   <meta property="og:description" content="{{ meme['answer'] }}" />
-  <meta property="og:image"       content="http://whatisyourexcuse.vote/img/{{ meme['image'] }}"/>
+  <meta property="og:image"       content="http://whatisyourexcuse.vote/memes/{{ meme['og_image'] }}"/>
 
   <!-- twitter cards -->
   {% if meme['excuse'] != '' -%}
@@ -27,7 +27,7 @@
   {%- endif %}
   <meta property="twitter:url"      content="http://whatisyourexcuse.vote/{{ meme['meme_id'] }}.html"/>
   <meta property="twitter:description" content="{{ meme['answer'] }}" />
-  <meta property="twitter:image"    content="http://whatisyourexcuse.vote/img/{{ meme['image'] }}"/>
+  <meta property="twitter:image"    content="http://whatisyourexcuse.vote/memes/{{ meme['image'] }}"/>
   <meta property="twitter:creator"  content="mcvotefacevotey">
   <meta property="twitter:site"     content="mcvotefacevotey">
 
@@ -81,7 +81,7 @@
     <div class="item excuse"></div>
     {% endif %}
     <div class="item meme" ontouchstart="touchmeme()" ontouchend="offmeme()">
-      <img src="/img/{{ meme['image'] }}" alt="{{ meme['alt']|safe }}">
+      <img src="/memes/{{ meme['image'] }}" alt="{{ meme['alt']|safe }}">
     </div>
     <div class="item footnote">{{ meme['answer']|safe }}</div>
     <div class="item buttons">
@@ -176,7 +176,7 @@
     }
            
     function setup_social() {
-        let meme_imgloc = 'http://whatisyourexcuse.vote/img/{{ meme['image'] }}';
+        let meme_imgloc = 'http://whatisyourexcuse.vote/memes/{{ meme['image'] }}';
         {% if meme['excuse'] %}
         let desc = encodeURIComponent("Voting Excuse Generator: {{ meme['excuse']|safe }}");
         {% else %}
